@@ -19,7 +19,7 @@ charts.
 ## Example usage
 
 ```yaml
-uses: xlyk/tagliatelle@v1
+uses: xlyk/tagliatelle@v2
 with:
   user: 'your-username'
   token: "${{ secrets.GH_ACTIONS_ACCESS_TOKEN }}"
