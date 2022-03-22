@@ -1,0 +1,38 @@
+# action.yml
+name: 'tagliatelle'
+author: 'Kyle Hanks (github.com/xlyk)'
+description: 'Utility to update tags and version numbers in config files'
+inputs:
+  user:
+    description: 'github username'
+    required: true
+  token:
+    description: 'github personal access token'
+    required: true
+  repo:
+    description: 'repo that contains target file'
+    required: true
+  file:
+    description: 'target file to update'
+    required: true
+  tag:
+    description: 'string to use as replacement'
+    required: true
+  pattern:
+    description: 'regex pattern to use'
+    required: true
+runs:
+  using: 'docker'
+  image: 'xlyk/tagliatelle:latest'
+  args:
+    - -repo
+    - ${{ inputs.repo }}
+    - -file
+    - ${{ inputs.file }}
+    - -tag
+    - ${{ inputs.tag }}
+    - -pattern
+    - ${{ inputs.pattern }}
+  env:
+    GIT_USER: ${{ inputs.user }}
+    GIT_TOKEN: ${{ inputs.token }}
