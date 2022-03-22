@@ -23,7 +23,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'xlyk/tagliatelle:latest'
+  image: 'docker://xlyk/tagliatelle:latest'
   args:
     - -repo
     - ${{ inputs.repo }}
