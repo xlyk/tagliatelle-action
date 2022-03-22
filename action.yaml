@@ -1,5 +1,5 @@
 # action.yml
-name: 'tagliatelle'
+name: 'xlyk-tagliatelle'
 author: 'Kyle Hanks (github.com/xlyk)'
 description: 'Utility to update tags and version numbers in config files'
 inputs:
