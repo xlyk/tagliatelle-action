@@ -21,12 +21,9 @@ inputs:
   pattern:
     description: 'regex pattern to use'
     required: true
-  ssh_key:
-    description: 'ssh key file'
-    required: false
 runs:
   using: 'docker'
-  image: 'docker://xlyk/tagliatelle:latest'
+  image: 'docker://xlyk/tagliatelle:v4'
   args:
     - -repo
     - ${{ inputs.repo }}
@@ -36,8 +33,6 @@ runs:
     - ${{ inputs.tag }}
     - -pattern
     - ${{ inputs.pattern }}
-    - -ssh-key
-    - "${{ inputs.ssh_key }}"
   env:
     GIT_USER: ${{ inputs.user }}
     GIT_TOKEN: ${{ inputs.token }}
